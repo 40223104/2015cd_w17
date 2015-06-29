@@ -24,6 +24,12 @@
 <v t="2014fall.20141212095015.2004"><vh>__init__</vh></v>
 <v t="2014fall.20141212095015.1778"><vh>index_orig</vh></v>
 <v t="2015.20150623092958.1"><vh>index</vh></v>
+<v t="2015.20150630003510.1" a="E"><vh>cda_g2_40223104</vh>
+<v t="2015.20150630003546.1"><vh>spur</vh></v>
+<v t="2015.20150630003554.1"><vh>spuraction</vh></v>
+<v t="2015.20150630003510.2"><vh>drawspur</vh></v>
+<v t="2015.20150630003510.3"><vh>drawspuraction</vh></v>
+</v>
 <v t="2015.20150629225821.1" a="E"><vh>cda_g2_w17_1</vh>
 <v t="2015.20150629225821.2"><vh>drawspur_1</vh></v>
 <v t="2015.20150629225821.3"><vh>drawspuraction</vh></v>
@@ -2097,7 +2103,7 @@ ctx.restore()
 <t tx="2015.20150623092756.1"></t>
 <t tx="2015.20150623092756.3">@cherrypy.expose
 # N 為齒數, M 為模數, P 為壓力角
-def drawspur_2(self, N=15, N1=24,N2=15, N3=24,N4=15,N5=24,N6=15,N7=24,N8=15,N9=24,N10=15,N11=24,N12=15,N13=24,M=10, P=20):
+def drawspur(self, N=15, N1=24,N2=15, N3=24,N4=15,N5=24,N6=15,N7=24,N8=15,N9=24,N10=15,N11=24,N12=15,N13=24,M=10, P=20):
     outstring = '''
 &lt;!DOCTYPE html&gt; 
 &lt;html&gt;
@@ -2633,10 +2639,63 @@ ctx.restore()
 def index(self):
     outstring = '''
  
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
 
+&lt;font size="6" font color="#00A800" font face="微軟正黑體"&gt;cda_g2 課程練習&lt;/font&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;font size="4" font face="微軟正黑體"&gt;&lt;b&gt;組員名單&lt;/b&gt;&lt;/font&gt;&lt;br&gt;
+&lt;table style="border:5px #008F00 solid;" rules="all" cellpadding='7';&gt;
+&lt;!-- "border:7px" 表示表格邊框粗細 --&gt;
+&lt;!-- "#008F00"  表示表格邊框顏色  --&gt;
+&lt;!--  色碼表 http://www.wibibi.com/info.php?tid=372 --&gt;
+
+&lt;tr&gt;
+&lt;td style='' align='center' valign="middle"&gt;組長&lt;/td&gt;
+&lt;td style='' align='center' valign="middle"&gt;學號&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;陳柏安&lt;/td&gt;&lt;td&gt;40223131&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style='' align='center' valign="middle"&gt;組員&lt;/td&gt;
+&lt;td style='' align='center' valign="middle"&gt;學號&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;吳佳容&lt;/td&gt;&lt;td&gt;40223102&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;林瑩禎&lt;/td&gt;&lt;td&gt;40223104&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;侯云婷&lt;/td&gt;&lt;td&gt;40223105&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;許芸瑄&lt;/td&gt;&lt;td&gt;40223106&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;黃雯琦&lt;/td&gt;&lt;td&gt;40223107&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;陳儀芳&lt;/td&gt;&lt;td&gt;40023107&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!--  align='center' 為水平置中 ，valign="middle" 為垂直置中 --&gt;
+&lt;br /&gt;
+
+&lt;font size="4" font face="微軟正黑體"&gt;&lt;b&gt;W17_test&lt;/b&gt;&lt;/font&gt;&lt;br /&gt;
 &lt;a href="drawspur_1"&gt;drawspur_1&lt;/a&gt;&lt;br /&gt;
 &lt;a href="drawspur_2"&gt;drawspur_2&lt;/a&gt;&lt;br /&gt;
-   
+&lt;br /&gt;
+
+&lt;font size="4" font face="微軟正黑體"&gt;&lt;b&gt;40223104 林瑩禎 課程練習&lt;/b&gt;&lt;/font&gt;&lt;br /&gt;
+&lt;a href="https://github.com/40223104/2015cd_0512" title="github"&gt;github&lt;/a&gt;&lt;br /&gt;
+&lt;a href="https://www.gitbook.com/book/40223131/2015cdag2_0421/edit#/edit/master/SUMMARY.md" title="gitbook"&gt;gitbook&lt;/a&gt;&lt;br&gt;
+&lt;br /&gt;
+
+&lt;font size="4" font face="微軟正黑體"&gt;&lt;b&gt;cda_g2_w11 練習&lt;/b&gt;&lt;/font&gt;&lt;br /&gt;
+&lt;form method=POST action=index&gt;
+&lt;a href="spur"&gt;spur&lt;/a&gt;&lt;br /&gt;
+&lt;a href="drawspur"&gt;drawspur&lt;/a&gt;&lt;br /&gt;
+&lt;a href="fileuploadform"&gt;上傳檔案&lt;/a&gt;&lt;br /&gt;
+&lt;a href="download_list"&gt;列出上傳檔案&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+
+&lt;font size="4"font face="微軟正黑體"&gt;&lt;b&gt;樂高人偶&lt;/b&gt;&lt;/font&gt;&lt;br&gt;
+&lt;form method=POST action=index&gt;
+&lt;a href="http://lego-40223104.rhcloud.com/man/" title="man"&gt;man&lt;/a&gt;&lt;br /&gt;
+
+
+
+
  
  
 '''
@@ -2783,6 +2842,216 @@ ctx.restore()
 
     return outstring
 
+</t>
+<t tx="2015.20150630003510.1"></t>
+<t tx="2015.20150630003510.2">@cherrypy.expose
+# N 為齒數, M 為模數, P 為壓力角
+def drawspur_1(self, N=15, N1=24, M=5, P=15):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;!-- 載入 brython.js --&gt;
+&lt;script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/Cango2D.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/static/gearUtils-04.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;!-- 啟動 brython() --&gt;
+&lt;body onload="brython()"&gt;
+
+&lt;form method=POST action=drawspuraction&gt;
+第1齒數:&lt;br /&gt;
+    &lt;select name = "N"&gt;
+    '''
+    for j in range(15, 81):
+        outstring +=''' &lt;option value ='''+str(j)+'''&gt;'''+str(j)+'''&lt;/option&gt;'''
+    outstring +='''
+&lt;/select&gt;&lt;br /&gt;
+
+第2齒數:&lt;br /&gt;
+    &lt;select name = "N1"&gt;
+    '''
+    j=24
+    outstring +=''' &lt;option value = '''+str(j)+'''&gt;'''+str(j)+'''&lt;/option&gt;'''
+    
+    for j in range(15, 81):
+        outstring +=''' &lt;option value = '''+str(j)+'''&gt;'''+str(j)+'''&lt;/option&gt;'''
+    outstring +='''
+&lt;/select&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;input type=submit value=send&gt;
+'''
+
+    return outstring
+
+
+
+</t>
+<t tx="2015.20150630003510.3">@cherrypy.expose
+# N 為齒數, M 為模數, P 為壓力角
+def drawspuraction(self, N=15, N1=24,M=5, P=15):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;!-- 載入 brython.js --&gt;
+&lt;script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/Cango2D.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/static/gearUtils-04.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;!-- 啟動 brython() --&gt;
+&lt;body onload="brython()"&gt;
+
+第1齒數:'''+str(N)+'''&lt;output name=N for=str(N)&gt;&lt;br /&gt;
+第2齒數:'''+str(N1)+'''&lt;output name=N1 for=str(N1)&gt;&lt;br /&gt;
+
+
+&lt;!-- 以下為 canvas 畫圖程式 --&gt;
+&lt;script type="text/python"&gt;
+# 從 browser 導入 document
+from browser import document
+from math import *
+# 請注意, 這裡導入位於 Lib/site-packages 目錄下的 spur.py 檔案
+import spur
+
+# 準備在 id="plotarea" 的 canvas 中繪圖
+canvas = document["plotarea"]
+ctx = canvas.getContext("2d")
+
+# 以下利用 spur.py 程式進行繪圖, 接下來的協同設計運算必須要配合使用者的需求進行設計運算與繪圖
+# 其中並將工作分配給其他組員建立類似 spur.py 的相關零件繪圖模組
+# midx, midy 為齒輪圓心座標, rp 為節圓半徑, n 為齒數, pa 為壓力角, color 為線的顏色
+# Gear(midx, midy, rp, n=20, pa=20, color="black"):
+# 模數決定齒的尺寸大小, 囓合齒輪組必須有相同的模數與壓力角
+# 壓力角 pa 單位為角度
+pa = 20
+# m 為模數
+m = 15
+# 第1齒輪齒數
+n_g1 = '''+str(N)+'''
+# 第2齒輪齒數
+n_g2 = '''+str(N1)+'''
+
+
+
+# 計算兩齒輪的節圓半徑
+rp_g1 = m*n_g1/2
+rp_g2 = m*n_g2/2
+
+# 繪圖第1齒輪的圓心座標
+x_g1 = 400
+y_g1 = 400
+# 第2齒輪的圓心座標, 假設排列成水平, 表示各齒輪圓心 y 座標相同
+x_g2 = x_g1 
+y_g2 = y_g1 + rp_g1 + rp_g2
+
+
+# 將第1齒輪順時鐘轉 90 度
+# 使用 ctx.save() 與 ctx.restore() 以確保各齒輪以相對座標進行旋轉繪圖
+
+ctx.save()
+# translate to the origin of second gear
+ctx.translate(x_g1, y_g1)
+# rotate to engage
+ctx.rotate(pi)
+# put it back
+ctx.translate(-x_g1, -y_g1)
+spur.Spur(ctx).Gear(x_g1, y_g1, rp_g1, n_g1, pa, "blue")
+ctx.restore()
+
+# 將第2齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第1齒輪進行囓合
+
+
+ctx.save()
+# translate to the origin of second gear
+ctx.translate(x_g2, y_g2)
+# rotate to engage
+ctx.rotate(pi/n_g2)
+# put it back
+ctx.translate(-x_g2, -y_g2)
+spur.Spur(ctx).Gear(x_g2, y_g2, rp_g2, n_g2, pa, "black")
+ctx.restore()
+
+
+&lt;/script&gt;
+&lt;canvas id="plotarea" width="3000" height="3000"&gt;&lt;/canvas&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+
+    return outstring
+
+</t>
+<t tx="2015.20150630003546.1">@cherrypy.expose
+# N 為齒數, M 為模數, P 為壓力角
+def spur(self, N=20 , M=5, P=15):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;!-- 載入 brython.js --&gt;
+&lt;script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/Cango2D.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/static/gearUtils-04.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;!-- 啟動 brython() --&gt;
+&lt;body onload="brython()"&gt;
+
+&lt;h1&gt;cda_g2_w11 練習&lt;/h1&gt;
+&lt;form method=POST action=spuraction&gt;
+齒數:&lt;select name = "N"&gt;
+&lt;option value="20"&gt;20&lt;/option&gt;
+&lt;option value="22"&gt;22&lt;/option&gt;
+&lt;option value="24"&gt;24&lt;/option&gt;
+&lt;option value="25"&gt;25&lt;/option&gt;
+&lt;option value="30"&gt;30&lt;/option&gt;
+&lt;option value="35"&gt;35&lt;/option&gt;
+&lt;option value="40"&gt;40&lt;/option&gt;
+&lt;option value="45"&gt;45&lt;/option&gt;
+&lt;/select&gt;&lt;br /&gt;
+模數:&lt;select name = "M"&gt;
+&lt;option value="5"&gt;5&lt;/option&gt;
+&lt;option value="10"&gt;10&lt;/option&gt;
+&lt;option value="15"&gt;15&lt;/option&gt;
+&lt;/select&gt;&lt;br /&gt;
+壓力角:&lt;select name = "P"&gt;
+&lt;option value="15"&gt;15&lt;/option&gt;
+&lt;option value="20"&gt;20&lt;/option&gt;
+&lt;/select&gt;&lt;br /&gt;
+&lt;input type=submit value=send&gt;
+
+
+
+'''
+
+    return outstring
+</t>
+<t tx="2015.20150630003554.1">@cherrypy.expose
+# N 為齒數, M 為模數, P 為壓力角
+def spuraction(self, N=20 , M=5, P=15):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;!-- 載入 brython.js --&gt;
+&lt;script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/Cango2D.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/static/gearUtils-04.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;!-- 啟動 brython() --&gt;
+&lt;body onload="brython()"&gt;
+
+齒數:'''+str(N)+'''&lt;output name=N for=str(N)&gt;&lt;br /&gt;
+模數:'''+str(M)+'''&lt;output name=M for=str(M)&gt;&lt;br /&gt;
+壓力角:'''+str(P)+'''&lt;output name=P for=str(P)&gt;&lt;br /&gt;
+
+'''
+
+    return outstring
 </t>
 </tnodes>
 </leo_file>

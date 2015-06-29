@@ -105,13 +105,271 @@ class Hello(object):
     def index(self):
         outstring = '''
      
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
 
+    <font size="6" font color="#00A800" font face="微軟正黑體">cda_g2 課程練習</font><br>
+    <br>
+    <font size="4" font face="微軟正黑體"><b>組員名單</b></font><br>
+    <table style="border:5px #008F00 solid;" rules="all" cellpadding='7';>
+    <!-- "border:7px" 表示表格邊框粗細 -->
+    <!-- "#008F00"  表示表格邊框顏色  -->
+    <!--  色碼表 http://www.wibibi.com/info.php?tid=372 -->
+
+    <tr>
+    <td style='' align='center' valign="middle">組長</td>
+    <td style='' align='center' valign="middle">學號</td>
+    </tr>
+    <tr><td>陳柏安</td><td>40223131</td></tr>
+    <tr>
+    <td style='' align='center' valign="middle">組員</td>
+    <td style='' align='center' valign="middle">學號</td>
+    </tr>
+    <tr><td>吳佳容</td><td>40223102</td></tr>
+    <tr><td>林瑩禎</td><td>40223104</td></tr>
+    <tr><td>侯云婷</td><td>40223105</td></tr>
+    <tr><td>許芸瑄</td><td>40223106</td></tr>
+    <tr><td>黃雯琦</td><td>40223107</td></tr>
+    <tr><td>陳儀芳</td><td>40023107</td></tr>
+    </table>
+    <!--  align='center' 為水平置中 ，valign="middle" 為垂直置中 -->
+    <br />
+
+    <font size="4" font face="微軟正黑體"><b>W17_test</b></font><br />
     <a href="drawspur_1">drawspur_1</a><br />
     <a href="drawspur_2">drawspur_2</a><br />
-       
+    <br />
+
+    <font size="4" font face="微軟正黑體"><b>40223104 林瑩禎 課程練習</b></font><br />
+    <a href="https://github.com/40223104/2015cd_0512" title="github">github</a><br />
+    <a href="https://www.gitbook.com/book/40223131/2015cdag2_0421/edit#/edit/master/SUMMARY.md" title="gitbook">gitbook</a><br>
+    <br />
+
+    <font size="4" font face="微軟正黑體"><b>cda_g2_w11 練習</b></font><br />
+    <form method=POST action=index>
+    <a href="spur">spur</a><br />
+    <a href="drawspur">drawspur</a><br />
+    <a href="fileuploadform">上傳檔案</a><br />
+    <a href="download_list">列出上傳檔案</a><br />
+    <br />
+
+    <font size="4"font face="微軟正黑體"><b>樂高人偶</b></font><br>
+    <form method=POST action=index>
+    <a href="http://lego-40223104.rhcloud.com/man/" title="man">man</a><br />
+
+
+
+
      
      
     '''
+        return outstring
+
+    @cherrypy.expose
+    # N 為齒數, M 為模數, P 為壓力角
+    def spur(self, N=20 , M=5, P=15):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!-- 載入 brython.js -->
+    <script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"></script>
+    <script src="/static/Cango2D.js" type="text/javascript"></script>
+    <script src="/static/gearUtils-04.js" type="text/javascript"></script>
+    </head>
+    <!-- 啟動 brython() -->
+    <body onload="brython()">
+
+    <h1>cda_g2_w11 練習</h1>
+    <form method=POST action=spuraction>
+    齒數:<select name = "N">
+    <option value="20">20</option>
+    <option value="22">22</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="30">30</option>
+    <option value="35">35</option>
+    <option value="40">40</option>
+    <option value="45">45</option>
+    </select><br />
+    模數:<select name = "M">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    </select><br />
+    壓力角:<select name = "P">
+    <option value="15">15</option>
+    <option value="20">20</option>
+    </select><br />
+    <input type=submit value=send>
+
+
+
+    '''
+
+        return outstring
+    @cherrypy.expose
+    # N 為齒數, M 為模數, P 為壓力角
+    def spuraction(self, N=20 , M=5, P=15):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!-- 載入 brython.js -->
+    <script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"></script>
+    <script src="/static/Cango2D.js" type="text/javascript"></script>
+    <script src="/static/gearUtils-04.js" type="text/javascript"></script>
+    </head>
+    <!-- 啟動 brython() -->
+    <body onload="brython()">
+
+    齒數:'''+str(N)+'''<output name=N for=str(N)><br />
+    模數:'''+str(M)+'''<output name=M for=str(M)><br />
+    壓力角:'''+str(P)+'''<output name=P for=str(P)><br />
+
+    '''
+
+        return outstring
+    @cherrypy.expose
+    # N 為齒數, M 為模數, P 為壓力角
+    def drawspur_1(self, N=15, N1=24, M=5, P=15):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!-- 載入 brython.js -->
+    <script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"></script>
+    <script src="/static/Cango2D.js" type="text/javascript"></script>
+    <script src="/static/gearUtils-04.js" type="text/javascript"></script>
+    </head>
+    <!-- 啟動 brython() -->
+    <body onload="brython()">
+
+    <form method=POST action=drawspuraction>
+    第1齒數:<br />
+        <select name = "N">
+        '''
+        for j in range(15, 81):
+            outstring +=''' <option value ='''+str(j)+'''>'''+str(j)+'''</option>'''
+        outstring +='''
+    </select><br />
+
+    第2齒數:<br />
+        <select name = "N1">
+        '''
+        j=24
+        outstring +=''' <option value = '''+str(j)+'''>'''+str(j)+'''</option>'''
+        
+        for j in range(15, 81):
+            outstring +=''' <option value = '''+str(j)+'''>'''+str(j)+'''</option>'''
+        outstring +='''
+    </select><br />
+    <br />
+    <input type=submit value=send>
+    '''
+
+        return outstring
+
+
+
+    @cherrypy.expose
+    # N 為齒數, M 為模數, P 為壓力角
+    def drawspuraction(self, N=15, N1=24,M=5, P=15):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!-- 載入 brython.js -->
+    <script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"></script>
+    <script src="/static/Cango2D.js" type="text/javascript"></script>
+    <script src="/static/gearUtils-04.js" type="text/javascript"></script>
+    </head>
+    <!-- 啟動 brython() -->
+    <body onload="brython()">
+
+    第1齒數:'''+str(N)+'''<output name=N for=str(N)><br />
+    第2齒數:'''+str(N1)+'''<output name=N1 for=str(N1)><br />
+
+
+    <!-- 以下為 canvas 畫圖程式 -->
+    <script type="text/python">
+    # 從 browser 導入 document
+    from browser import document
+    from math import *
+    # 請注意, 這裡導入位於 Lib/site-packages 目錄下的 spur.py 檔案
+    import spur
+
+    # 準備在 id="plotarea" 的 canvas 中繪圖
+    canvas = document["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下利用 spur.py 程式進行繪圖, 接下來的協同設計運算必須要配合使用者的需求進行設計運算與繪圖
+    # 其中並將工作分配給其他組員建立類似 spur.py 的相關零件繪圖模組
+    # midx, midy 為齒輪圓心座標, rp 為節圓半徑, n 為齒數, pa 為壓力角, color 為線的顏色
+    # Gear(midx, midy, rp, n=20, pa=20, color="black"):
+    # 模數決定齒的尺寸大小, 囓合齒輪組必須有相同的模數與壓力角
+    # 壓力角 pa 單位為角度
+    pa = 20
+    # m 為模數
+    m = 15
+    # 第1齒輪齒數
+    n_g1 = '''+str(N)+'''
+    # 第2齒輪齒數
+    n_g2 = '''+str(N1)+'''
+
+
+
+    # 計算兩齒輪的節圓半徑
+    rp_g1 = m*n_g1/2
+    rp_g2 = m*n_g2/2
+
+    # 繪圖第1齒輪的圓心座標
+    x_g1 = 400
+    y_g1 = 400
+    # 第2齒輪的圓心座標, 假設排列成水平, 表示各齒輪圓心 y 座標相同
+    x_g2 = x_g1 
+    y_g2 = y_g1 + rp_g1 + rp_g2
+
+
+    # 將第1齒輪順時鐘轉 90 度
+    # 使用 ctx.save() 與 ctx.restore() 以確保各齒輪以相對座標進行旋轉繪圖
+
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g1, y_g1)
+    # rotate to engage
+    ctx.rotate(pi)
+    # put it back
+    ctx.translate(-x_g1, -y_g1)
+    spur.Spur(ctx).Gear(x_g1, y_g1, rp_g1, n_g1, pa, "blue")
+    ctx.restore()
+
+    # 將第2齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第1齒輪進行囓合
+
+
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g2, y_g2)
+    # rotate to engage
+    ctx.rotate(pi/n_g2)
+    # put it back
+    ctx.translate(-x_g2, -y_g2)
+    spur.Spur(ctx).Gear(x_g2, y_g2, rp_g2, n_g2, pa, "black")
+    ctx.restore()
+
+
+    </script>
+    <canvas id="plotarea" width="3000" height="3000"></canvas>
+    </body>
+    </html>
+    '''
+
         return outstring
 
     @cherrypy.expose
@@ -254,7 +512,7 @@ class Hello(object):
 
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
-    def drawspur_2(self, N=15, N1=24,N2=15, N3=24,N4=15,N5=24,N6=15,N7=24,N8=15,N9=24,N10=15,N11=24,N12=15,N13=24,M=10, P=20):
+    def drawspur(self, N=15, N1=24,N2=15, N3=24,N4=15,N5=24,N6=15,N7=24,N8=15,N9=24,N10=15,N11=24,N12=15,N13=24,M=10, P=20):
         outstring = '''
     <!DOCTYPE html> 
     <html>
