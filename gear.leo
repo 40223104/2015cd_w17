@@ -2097,7 +2097,7 @@ ctx.restore()
 <t tx="2015.20150623092756.1"></t>
 <t tx="2015.20150623092756.3">@cherrypy.expose
 # N 為齒數, M 為模數, P 為壓力角
-def drawspur(self, N=15, N1=24,N2=15, N3=24,N4=15,N5=24,N6=15,N7=24,N8=15,N9=24,N10=15,N11=24,N12=15,N13=24,M=10, P=20):
+def drawspur_2(self, N=15, N1=24,N2=15, N3=24,N4=15,N5=24,N6=15,N7=24,N8=15,N9=24,N10=15,N11=24,N12=15,N13=24,M=10, P=20):
     outstring = '''
 &lt;!DOCTYPE html&gt; 
 &lt;html&gt;
@@ -2634,8 +2634,8 @@ def index(self):
     outstring = '''
  
 
-&lt;a href="drawspur_1"&gt;gear&lt;/a&gt;&lt;br /&gt;
-&lt;a href="drawspur_2"&gt;gear&lt;/a&gt;&lt;br /&gt;
+&lt;a href="drawspur_1"&gt;drawspur_1&lt;/a&gt;&lt;br /&gt;
+&lt;a href="drawspur_2"&gt;drawspur_2&lt;/a&gt;&lt;br /&gt;
    
  
  
@@ -2646,7 +2646,7 @@ def index(self):
 <t tx="2015.20150629225821.1"></t>
 <t tx="2015.20150629225821.2">@cherrypy.expose
 # N 為齒數, M 為模數, P 為壓力角
-def drawspur(self, N=15, N1=24, M=5, P=15):
+def drawspur_1(self, N=15, N1=24, M=5, P=15):
     outstring = '''
 &lt;!DOCTYPE html&gt; 
 &lt;html&gt;
